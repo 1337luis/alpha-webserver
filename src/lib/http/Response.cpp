@@ -24,7 +24,7 @@ namespace Http
         return 97 * sizeof( char );
     }
 
-    const char* Response::c_str()
+    const char* Response::to_string()
     {
         return "HTTP/1.1 200 Ok\nServer:alphaWebServer\nContent-Type: text/html\nContent-Length: 14\n\n<h1>Hola!</h1>";
     }

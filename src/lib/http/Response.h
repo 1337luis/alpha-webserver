@@ -20,7 +20,7 @@ namespace Http
         ~Response();
 
         int length();
-        const char* c_str();
+        const char* to_string();
 
         Response fromFile( std::string file_path );
     private:

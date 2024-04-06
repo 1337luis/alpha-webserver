@@ -120,7 +120,7 @@ namespace Http
         Response response = this->request_handler->getResponse();
 
         // Write response to the socket (Send to the client)
-        write( this->client_socket, response.c_str(), response.length() );
+        write( this->client_socket, response.to_string(), response.length() );
 
         // Close conection to client
         close( this->client_socket );
