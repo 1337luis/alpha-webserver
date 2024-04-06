@@ -24,6 +24,7 @@
 #include <arpa/inet.h>
 
 #include "IRequestHandler.h"
+#include "Request.h"
 
 
 #define HTTP_SERVER_N_QUEUE_CONNECTIONS 10
@@ -38,8 +39,9 @@ namespace Http
         void start();
 
     private:
-        void acceptConnection();
+        void acceptConnections();
         void processRequest();
+        void sendResponse();
 
         int connection_socket;
         int client_socket;
