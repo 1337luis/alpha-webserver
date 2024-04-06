@@ -1,10 +1,11 @@
 # Input files
 OBJS = src/main.cpp \
-	   src/lib/Logger.cpp
-
+	   $(wildcard src/lib/*.cpp) \
+	   $(wildcard src/lib/tools/*.cpp) \
+	   $(wildcard src/lib/http/*.cpp)
 
 # Output file
-OBJ = bin/main
+OBJ = bin/alpha_webserver
 
 # Compiler flags
 COMPILER_FLAGS = -w
