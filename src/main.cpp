@@ -6,15 +6,15 @@
  */
 
 #include <iostream>
-#include "lib/Logger.hpp"
+#include "lib/tools/Logger.h"
+#include "lib/http/Server.h"
 
 int main( int argc, char* argv[] )
 {
-    Tools::Logger::Info( "Hello World!" );
-    Tools::Logger::Error( "Hello World!" );
-    Tools::Logger::Success( "Hello World!" );
-    Tools::Logger::Warning( "Hello World!" );
-    Tools::Logger::Log( "Hello World!" );
+    Http::Server *server = new Http::Server( "0.0.0.0", 8080, nullptr );
+    server->start();
+
+    delete server;
 
     return 0;
 }

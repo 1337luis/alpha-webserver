@@ -5,8 +5,8 @@
  * @date 2024-04-06
  */
 
-#ifndef H_LOGGER
-#define H_LOGGER
+#ifndef H_TOOLS_LOGGER
+#define H_TOOLS_LOGGER
 
 #include <iostream>
 #include <string>

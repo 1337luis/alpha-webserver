@@ -5,7 +5,7 @@
  * @date 2024-04-06
  */
 
-#include "Logger.hpp"
+#include "Logger.h"
 
 namespace Tools
 {
@@ -59,23 +59,23 @@ namespace Tools
     int Logger::Log( std::string message, int stdoutn, std::string color_string )
     {
         std::time_t now = std::time( nullptr );
-        char timeString[ 64 ];
-        std::strftime( timeString, sizeof( timeString ), "[%Y-%m-%d %H:%M:%S] ", std::localtime( &now ) );
+        char time_string[ 64 ];
+        std::strftime( time_string, sizeof( time_string ), "[%Y-%m-%d %H:%M:%S] ", std::localtime( &now ) );
 
         if( LOGGER_USE_DISPLAY_LOG )
         {
             if( stdoutn == LOGGER_N_STDOUT )
             {
-                std::cout << color_string << timeString << message << LOGGER_MSG_DEFAULT_COLOR << std::endl;
+                std::cout << color_string << time_string << message << LOGGER_MSG_DEFAULT_COLOR << std::endl;
             } else {
-                std::cerr << color_string << timeString << message << LOGGER_MSG_DEFAULT_COLOR << std::endl;
+                std::cerr << color_string << time_string << message << LOGGER_MSG_DEFAULT_COLOR << std::endl;
             }
         }
 
         // If we need to log to a file
         if( LOGGER_USE_FILE_LOG )
         {
-            Logger::FileLog( timeString + message );
+            Logger::FileLog( time_string + message );
         }
     }
 
