@@ -106,6 +106,7 @@ namespace Http
 
         // Build request
         Request request( buffer );
+        Tools::Logger::Info( "Requested " + request.getVerb() + " " + request.getPath() + " from " + request.getHeader( "User-Agent" ) );
 
         // Send request to the request handler
         this->request_handler->processRequest( request );
