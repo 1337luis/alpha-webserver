@@ -7,12 +7,8 @@
 
 #include <iostream>
 
-#include "lib/tools/Logger.h"
 #include "lib/http/Server.h"
 #include "lib/http/DefaultRequestHandler.h"
-
-
-#include "lib/http/Request.h"
 
 int main( int argc, char* argv[] )
 {
