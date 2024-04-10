@@ -42,7 +42,8 @@ namespace Http
             r.final_content = "HTTP/1.1 200 Ok\nServer:alphaWebServer\nContent-Type: text/html\nContent-Length: " + std::to_string( file_content.length() );
             r.final_content.append("\n\n" + file_content);
         } else {
-            r.final_content = "HTTP/1.1 404 Not found\nServer:alphaWebServer\nContent-Type: text/html\nContent-Length: 31\n\n<h1>Error 404. Not found</h1>";
+            //r.final_content = "HTTP/1.1 404 Not found\nServer:alphaWebServer\nContent-Type: text/html\nContent-Length: 31\n\n<h1>Error 404. Not found</h1>";
+            r = Response::fromStatusCode( 404 );
         }
         
         return r;
@@ -50,6 +51,20 @@ namespace Http
 
     Response Response::fromStatusCode( int status_code )
     {
+        Response r;
+        std::string path = Tools::FileSystem::getCurrentPath() + "/htdocs/" + std::to_string( status_code ) + ".html";
 
+        if( Tools::FileSystem::fileExists( path ) )
+        {
+            std::string file_content = Tools::FileSystem::fileGetContents( path );
+
+            // Build request content
+            r.final_content = "HTTP/1.1 " + std::to_string( status_code ) + " Ok\nServer:alphaWebServer\nContent-Type: text/html\nContent-Length: " + std::to_string( file_content.length() );
+            r.final_content.append("\n\n" + file_content);
+        } else {
+            r.final_content = "HTTP/1.1 404 Not found\nServer:alphaWebServer\nContent-Type: text/html\nContent-Length: 31\n\n<h1>Error 404. Not found</h1>";
+        }
+        
+        return r;
     }
 }
