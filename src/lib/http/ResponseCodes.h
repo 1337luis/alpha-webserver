@@ -5,6 +5,9 @@
  * @date 2024-04-08
  */
 
+#ifndef H_HTTP_RESPONSE_CODES
+#define H_HTTP_RESPONSE_CODES
+
 #include <string>
 #include <unordered_map>
 
@@ -83,3 +86,5 @@ namespace Http
         };
     };
 }
+
+#endif
