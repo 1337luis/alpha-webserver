@@ -11,11 +11,11 @@ OBJ = bin/alpha_webserver
 COMPILER_FLAGS = -w
 
 # Linker flags
-#LINKER_FLAGS = -lSDL2
+LINKER_FLAGS = -lstdc++fs
 
 # Compiler
 CC = g++
 
 
 all : $(OBJS)
-	$(CC) $(OBJS) $(COMPILER_FLAGS) -o $(OBJ) 
+	$(CC) $(OBJS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ) 
