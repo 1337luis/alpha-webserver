@@ -14,8 +14,13 @@ namespace Http
 {
     class DefaultRequestHandler: public IRequestHandler
     {
+    public:
         Response getResponse();
         void processRequest( Request request );
+
+    private:
+        Request *request;
+        Response response;
     };
 }
 

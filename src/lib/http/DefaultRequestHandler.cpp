@@ -9,15 +9,24 @@
 
 namespace Http
 {
+    /**
+     * Get response
+     * 
+     * @return Response
+     */
     Response DefaultRequestHandler::getResponse()
     {
-        Response response;
-
-        return response;
+        return this->response; // segfault
     }
 
+    /**
+     * Process actual request
+     * 
+     * @param Request request
+     */
     void DefaultRequestHandler::processRequest( Request request )
     {
-
+        this->request = &request;
+        this->response = Response::fromFile( this->request->getPath() );;
     }
 }
