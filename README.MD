@@ -25,3 +25,7 @@ Accept-Language: es-ES,es;q=0.9,ro-RO;q=0.8,ro;q=0.7
     - BASEPATH
     - FILES AVAILABLE
 - Allow interpreters
+
+# See
+[HTTP Pipelining](https://en.wikipedia.org/wiki/HTTP_pipelining)
+[RFC 2616](https://datatracker.ietf.org/doc/html/rfc2616)
