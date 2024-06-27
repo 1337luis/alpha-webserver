@@ -11,7 +11,7 @@ namespace Http
 {
     Response::Response()
     {
-        final_content = "HTTP/1.1 200 Ok\nServer:alphaWebServer\nContent-Type: text/html\nContent-Length: 14\n\n<h1>Hola!</h1>";
+        final_content = "HTTP/1.1 200 Ok\nServer:alphaWebServer\nContent-Type: text/html\nContent-Length: 14\n<h1>Hola!</h1>";
     }
 
     Response::~Response()
@@ -59,6 +59,7 @@ namespace Http
             std::string file_content = Tools::FileSystem::fileGetContents( path );
 
             // Build request content
+            // TODO: Respuesta acorde con el código de estado. No es lógico que un 404 diga "OK"
             r.final_content = "HTTP/1.1 " + std::to_string( status_code ) + " Ok\nServer:alphaWebServer\nContent-Type: text/html\nContent-Length: " + std::to_string( file_content.length() );
             r.final_content.append("\n\n" + file_content);
         } else {
