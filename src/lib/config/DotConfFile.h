@@ -11,6 +11,10 @@
 #include <unordered_map>
 #include <string>
 
+#define DOT_CONF_ERROR_500 "500.html"
+#define DOT_CONF_ERROR_404 "404.html"
+#define DOT_CONF_DIRECTORY_INDEX "index.html index.htm index.shtml"
+
 namespace Config
 {
     class DotConfFile
