@@ -9,6 +9,9 @@
 
 namespace Http
 {
+    /**
+     * Return HTTP hello world by default. For testing purposes
+     */
     Response::Response()
     {
         final_content = "HTTP/1.1 200 Ok\nServer:alphaWebServer\nContent-Type: text/html\nContent-Length: 14\n<h1>Hola!</h1>";
@@ -19,16 +22,34 @@ namespace Http
         
     }
 
+    /**
+     * Returns the size of the actual content
+     * 
+     * TODO: Change return type to ulong
+     * 
+     * @return int Content Size (Casted from unsigned long)
+     */
     int Response::length()
     {
         return final_content.length() * sizeof( char );
     }
 
+    /**
+     * Returns the content as c string
+     * 
+     * @return const char * Content
+     */
     const char* Response::to_string()
     {
         return final_content.c_str();
     }
 
+    /**
+     * Generates a response from file
+     * 
+     * @param string file_path File to load
+     * @return Response
+     */
     Response Response::fromFile( std::string file_path )
     {
         Response r;
@@ -49,6 +70,12 @@ namespace Http
         return r;
     }
 
+    /**
+     * Generates a response from status code (if not implemented by web app)
+     * 
+     * @param int status_code HTTP Status Code
+     * @return Response
+     */
     Response Response::fromStatusCode( int status_code )
     {
         Response r;

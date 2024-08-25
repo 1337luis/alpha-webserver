@@ -13,6 +13,7 @@ namespace Tools
      * Registers an error an sends it to the error output
      * 
      * @param std::string message Message to register or show
+     * @return
      */
     int Logger::Error( std::string message )
     {

@@ -28,6 +28,9 @@ namespace Tools
 
     /**
      * Gets the full content of the specified filepath
+     * 
+     * @param string file_path Path to file
+     * @return File content
      */
     std::string FileSystem::fileGetContents( std::string file_path )
     {
@@ -49,7 +52,7 @@ namespace Tools
     /**
      * Check if file exists
      * 
-     * @param std::string file_path Path to the file
+     * @param string file_path Path to the file
      * @return bool
      */
     bool FileSystem::fileExists( std::string file_path )
@@ -63,7 +66,7 @@ namespace Tools
     /**
      * Check if a path is a directory
      * 
-     * @param std::string path Directory path
+     * @param string path Directory path
      * @return bool
      */
     bool FileSystem::isDirectory( std::string path )
@@ -74,7 +77,7 @@ namespace Tools
     /**
      * Check if a file is a regular file
      * 
-     * @param std::string path File path
+     * @param string path File path
      * @return bool
      */
     bool FileSystem::isRegularFile( std::string path )
@@ -85,7 +88,7 @@ namespace Tools
     /**
      * Check if a file is a symbolic link
      * 
-     * @param std::string path File path
+     * @param string path File path
      * @return bool
      */
     bool FileSystem::isSymLink( std::string path )
